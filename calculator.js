@@ -15,6 +15,10 @@ angular.module('Calc', [])
   // Constants
   var ADD = "adding";
   var SUBTRACT = "subtracting";
+  var DIVIDE = "dividing";
+  var MULTIPLY = "multiplying";
+  var DIVIDE_TOKEN = "/";
+  var MULTIPLY_TOKEN = "*";
   var ADD_TOKEN = "+";
   var SUBTRACT_TOKEN = "-";
 
@@ -56,6 +60,22 @@ angular.module('Calc', [])
     setOperationToken(SUBTRACT);
     setOutput(String($scope.runningTotal));
     $scope.pendingOperation = SUBTRACT;
+    $scope.newNumber = true;
+    $scope.pendingValue = null;
+  };
+   
+   $scope.divide = function() {
+    if($scope.pendingValue) {
+      if($scope.runningTotal && ($scope.pendingOperation == DIVIDE) ) {
+        $scope.runningTotal /= $scope.pendingValue;
+      }
+      else {
+        $scope.runningTotal = $scope.pendingValue;
+      }
+    }
+    setOperationToken(DIVIDE);
+    setOutput(String($scope.runningTotal));
+    $scope.pendingOperation = DIVIDE;
     $scope.newNumber = true;
     $scope.pendingValue = null;
   };
@@ -113,6 +133,10 @@ angular.module('Calc', [])
       $scope.operationToken = ADD_TOKEN;
     } else if (operation == SUBTRACT) {
       $scope.operationToken = SUBTRACT_TOKEN;
+    } else if (operation == DIVIDE){
+      $scope.operationToken = DIVIDE_TOKEN;
+    } else if (operation == MULTIPLY){
+      $scope.operationToken = MULTIPLY_TOKEN;
     } else {
       $scope.operationToken = "";
     }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script> -->
+   <!-- <script src="//angular-ui.github.io/ui-router/release/angular-ui-router.js"></script> -->
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+   <link rel="stylesheet" href="calculator.css">
+   <script src="calculator.js"></script>
+ </head>
+
+    <body>
+
+  <h1>Button Group</h1>
+
+  <p class="output" name="output" >
+    {{output}}<br>
+    {{operationToken}}
+  </p>
+
+  <div class="btn-group">
+    <div class="btn-group">
+    <button name="btn7" class="numberbutton" value="7"> 7 </button>
+    <button name="btn8" class="numberbutton" value="8"> 8 </button>
+    <button name="btn9" class="numberbutton" value="9"> 9 </button>
+    <button name="btndivide" class="numberbutton" value="/"> / </button>
+    </div>
+  <div class="btn-group">
+    <button name="btn4" class="numberbutton" value="4"> 4 </button>
+    <button name="btn5" class="numberbutton" value="5"> 5 </button>
+    <button name="btn6" class="numberbutton" value="6"> 6 </button>
+    <button name="btnmultiply" class="numberbutton" value="x"> x </button>
+  </div>
+  <div class="btn-group">
+    <button name="btn1" class="numberbutton" value="1"> 1 </button>
+    <button name="btn2" class="numberbutton" value="2"> 2 </button>
+    <button name="btn3" class="numberbutton" value="3"> 3 </button>
+    <button name="btn-" class="numberbutton" value="-"> - </button>
+  </div>
+  <div class="btn-group">
+    <button name="btnclear" class="numberbutton" value="clear"> Clear </button>
+    <button name="btn0" class="numberbutton" value="0"> 0 </button>
+    <button name="btnequals" class="numberbutton" value="="> = </button>
+    <button name="btnplus" class="numberbutton" value="+"> + </button>
+  </div>
+  </div>
+
+
+
+</body>
+
+
+</html>
+

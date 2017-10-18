@@ -1,4 +1,8 @@
-function Ctrl($scope) {
+angular.module('Calc', [])
+.controller('MainCtrl', [
+ '$scope',
+
+  function Ctrl($scope) {
 
   $scope.output = "0";
   $scope.newNumber = true;
@@ -123,3 +127,5 @@ function Ctrl($scope) {
   };
 
 }
+
+])

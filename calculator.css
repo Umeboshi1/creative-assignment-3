@@ -8,6 +8,11 @@
     width:15%;
 }
 
+#calc {
+    border-style:solid;
+    border-radius:10px;
+    background-color:#555;
+}
 /* Clear floats (clearfix hack) */
 .btn-group:after {
     content: "";

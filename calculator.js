@@ -63,7 +63,7 @@ angular.module('Calc', [])
     $scope.newNumber = true;
     $scope.pendingValue = null;
   };
-   
+
    $scope.divide = function() {
     if($scope.pendingValue) {
       if($scope.runningTotal && ($scope.pendingOperation == DIVIDE) ) {
@@ -80,6 +80,22 @@ angular.module('Calc', [])
     $scope.pendingValue = null;
   };
 
+  $scope.multiply = function() {
+    if($scope.pendingValue) {
+      if($scope.runningTotal && $scope.pendingOperation == MULTIPLY ) {
+        $scope.runningTotal *= $scope.pendingValue;
+      }
+      else {
+        $scope.runningTotal = $scope.pendingValue;
+      }
+    }
+    setOperationToken(MULTIPLY);
+    setOutput(String($scope.runningTotal));
+    $scope.pendingOperation = MULTIPLY;
+    $scope.newNumber = true;
+    $scope.pendingValue = null;
+  };
+
   $scope.calculate = function() {
     if(!$scope.newNumber) {
       $scope.pendingValue = toNumber($scope.output);
@@ -91,7 +107,16 @@ angular.module('Calc', [])
     } else if($scope.pendingOperation == SUBTRACT) {
       $scope.runningTotal -= $scope.pendingValue;
       $scope.lastOperation = SUBTRACT;
-    } else {
+    }
+    else if($scope.pendingOperation == MULTIPLY) {
+      $scope.runningTotal *= $scope.pendingValue;
+      $scope.lastOperation = MULTIPLY;
+    }
+    else if($scope.pendingOperation == DIVIDE) {
+      $scope.runningTotal /= $scope.pendingValue;
+      $scope.lastOperation = DIVIDE;
+    }
+    else {
       if($scope.lastOperation) {
         if($scope.lastOperation == ADD) {
           if($scope.runningTotal) {
@@ -102,6 +127,20 @@ angular.module('Calc', [])
         } else if($scope.lastOperation == SUBTRACT) {
           if($scope.runningTotal) {
             $scope.runningTotal -= $scope.lastValue;
+          } else {
+            $scope.runningTotal = 0;
+          }
+        }
+        else if($scope.lastOperation == DIVIDE) {
+          if($scope.runningTotal) {
+            $scope.runningTotal /= $scope.lastValue;
+          } else {
+            $scope.runningTotal = 0;
+          }
+        }
+        else if($scope.lastOperation == MULTIPLY) {
+          if($scope.runningTotal) {
+            $scope.runningTotal *= $scope.lastValue;
           } else {
             $scope.runningTotal = 0;
           }

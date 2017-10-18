@@ -11,8 +11,16 @@
 #calc {
     border-style:solid;
     border-radius:10px;
-    background-color:#555;
+    background-color:#777;
+    text-align:center;
+    width:%60;
 }
+
+.calcbody{
+    width:70%;
+    text-align:center;
+}
+
 /* Clear floats (clearfix hack) */
 .btn-group:after {
     content: "";

@@ -15,11 +15,17 @@
 	display:inline-block;
 }
 
+@font-face{
+ font-family:'digital-clock-font';
+ src: url('digital-7.ttf');
+}
 .thinborder{
-	font-family:Digital-7;
+	background-color:#fff;
+	font-size:50px;
+	font-family:digital-clock-font;
 }
 #calc {
-	
+	min-width:300px;
 	width:30%;
 	margin:auto;
     border-style:solid;
@@ -55,4 +61,3 @@
 .btn-group button:hover {
     background-color: #3e8e41;
 }
-

@@ -5,20 +5,39 @@
     padding: 10px 24px; /* Some padding */
     cursor: pointer; /* Pointer/hand icon */
     float: left; /* Float the buttons side by side */
-    width:15%;
+    width:25%;
+	display:inline-block;
 }
 
+#btns{
+	width:auto;
+	margin:auto;
+	display:inline-block;
+}
+
+.thinborder{
+	font-family:Digital-7;
+}
 #calc {
+	
+	width:30%;
+	margin:auto;
     border-style:solid;
     border-radius:10px;
     background-color:#777;
     text-align:center;
-    width:%60;
+   
+}
+
+#wrap{
+	width:100%;
 }
 
 .calcbody{
-    width:70%;
+    //width:50%;
     text-align:center;
+	margin:auto;
+	display:inline-block;
 }
 
 /* Clear floats (clearfix hack) */
